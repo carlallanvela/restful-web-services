@@ -1,5 +1,10 @@
 package com.cvela.rest.webservices.restfulwebservices.helloworld;
 
+/**
+ * Hello World Bean.
+ * @author cvela
+ *
+ */
 public class HelloWorldBean {
 	private String message;
 	public HelloWorldBean(String message) {
