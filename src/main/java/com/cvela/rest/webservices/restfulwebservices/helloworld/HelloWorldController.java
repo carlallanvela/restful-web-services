@@ -1,4 +1,4 @@
-package com.cvela.rest.webservices.restfulwebservices;
+package com.cvela.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,13 +26,19 @@ public class HelloWorldController {
 	// hello-world-bean
 	@GetMapping(path = "/hello-world-bean")
 	public HelloWorldBean helloWorldBean() {
-		return new HelloWorldBean("Hello World");
+		try {
+			return new HelloWorldBean("Hello World");
+		} catch (Exception e) {
+			throw new RuntimeException("Some error has Happened!"
+					+ " Please contact support.");	
+		}
 	}
 	
 	// hello-world with path parameter
 	// hello-world/path-variable/name
 	@GetMapping(path = "/hello-world/path-variable/{name}")
 	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-		return new HelloWorldBean(String.format("Hello World %s", name)); //replace % with name
+		//replace % with name
+		return new HelloWorldBean(String.format("Hello World, %s!", name));
 	}
 }

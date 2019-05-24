@@ -1,4 +1,4 @@
-package com.cvela.rest.webservices.restfulwebservices;
+package com.cvela.rest.webservices.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
 	private String message;
