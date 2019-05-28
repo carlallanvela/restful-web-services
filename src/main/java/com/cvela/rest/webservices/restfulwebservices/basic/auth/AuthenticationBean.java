@@ -23,5 +23,4 @@ public class AuthenticationBean {
 	public String toString() {
 		return String.format("Authentication Bean [message=%s]", message);
 	}
-
 }

@@ -6,23 +6,28 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * Spring Security configuration for Basic Authentication.
+ * @author cvela
+ *
+ */
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerAdapter {
-	
-	@Override
-	/** 
+
+	/**
 	 * Customized Spring Security Configuration
 	 */
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.csrf().disable() // Disable csrf
+			.csrf().disable() // Disable Cross-site request forgery.
 			.authorizeRequests()
-			.antMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Permit options
+			.antMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Permit Options in request.
 				.anyRequest().authenticated()
 				.and()
-			//.formLogin().and() Disable Web Login
-			.httpBasic(); // Use http basic authentication
+			//.formLogin().and() Disable Web Login in Spring.
+			.httpBasic(); // Use HTTP Basic Authentication
 	}
 
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 /**
  * Todo Dummy Service.
  * @author cvela
- *
  */
 @Service
 public class TodoHardcodedService {

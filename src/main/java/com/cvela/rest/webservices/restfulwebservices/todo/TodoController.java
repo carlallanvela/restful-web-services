@@ -30,11 +30,6 @@ public class TodoController {
 	@Autowired
 	private TodoHardcodedService todoService;
 
-	/**
-	 * Get Request.
-	 * @param username
-	 * @return
-	 */
 	@GetMapping("/users/{username}/todos")
 	public List<Todo> getAllTodos(@PathVariable String username) {
 		return todoService.findAll();
@@ -49,8 +44,7 @@ public class TodoController {
 	@PutMapping("/users/{username}/todos/{id}")
 	public ResponseEntity<Todo> saveTodo(@PathVariable String username,
 			@RequestBody Todo todo) {
-		Todo createdTodo = todoService.save(todo);
-		
+		todoService.save(todo);
 		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
 	}
 	
@@ -58,22 +52,11 @@ public class TodoController {
 	public ResponseEntity<Void> updateTodo(@PathVariable String username,
 			@PathVariable long id, @RequestBody Todo todo) {
 		Todo createdTodo = todoService.save(todo);
-		
-		// Location
-		// Get current resource url
-		// /users/{username}/todos/{id}
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 			.path("/{id}").buildAndExpand(createdTodo.getId()).toUri();		
-		
-		
 		return ResponseEntity.created(uri).build();
 	}
 	
-	/**
-	 * Delete Request. ResponseEntity helps us build Response with Status.
-	 * @param username
-	 * @return
-	 */
 	@DeleteMapping("/users/{username}/todos/{id}")
 	public ResponseEntity<Void> deleteTodo(@PathVariable String username,
 			@PathVariable long id) {
@@ -81,6 +64,4 @@ public class TodoController {
 		if (todo != null) return ResponseEntity.noContent().build();
 		return ResponseEntity.notFound().build();
 	}
-	
-
 }

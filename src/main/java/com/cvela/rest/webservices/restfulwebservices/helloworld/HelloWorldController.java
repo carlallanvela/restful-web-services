@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * This Controller handles REST Requests.
+ * Hello World Controller.
  * @author cvela
  *
  */
@@ -35,7 +35,6 @@ public class HelloWorldController {
 	}
 	
 	// hello-world with path parameter
-	// hello-world/path-variable/name
 	@GetMapping(path = "/hello-world/path-variable/{name}")
 	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
 		//replace % with name
