@@ -1,4 +1,4 @@
-package com.cvela.rest.webservices.restfulwebservices.basic.auth;
+package com.cvela.rest.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * Spring Security configuration for Basic Authentication.
+ * Note that this is not currently used as we're moving to JWT.
  * @author cvela
  *
  */

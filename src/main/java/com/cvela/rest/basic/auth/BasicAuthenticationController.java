@@ -1,4 +1,4 @@
-package com.cvela.rest.webservices.restfulwebservices.basic.auth;
+package com.cvela.rest.basic.auth;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * This controller handles the basic authentication.
+ * Note that this is not currently used as we're moving to JWT.
  * @author cvela
  *
  */

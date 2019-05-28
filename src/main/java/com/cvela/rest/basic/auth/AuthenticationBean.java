@@ -1,7 +1,8 @@
-package com.cvela.rest.webservices.restfulwebservices.basic.auth;
+package com.cvela.rest.basic.auth;
 
 /**
  * Authentication Bean.
+ * Note that this is not currently used as we're moving to JWT.
  * @author cvela
  *
  */
