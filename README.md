@@ -1,6 +1,6 @@
 # Todo Application Rest Services
 
-This application is created using Angular 7, Java and SpringBoot.
+This backend application is developed using SpringBoot. It hosts services that is used by the front end in the TODO project in this github.
 
 ## Development server
 
@@ -8,4 +8,4 @@ Run your server on your IDE. Navigate to `http://localhost:8080/`. The app will 
 
 ## Further help
 
-email me at carlallanvela@gmail.com
+email me at carlallanvela@gmail.com.
